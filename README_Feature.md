@@ -7,18 +7,18 @@ NuGet.org allows only images from certain domains. Complete list is here: https:
 In case of GitHub there is required a raw URI of icon file - direct link to github.com domain is not permitted.
 (Tip: to obtain raw URI, open the .png image file on GitHub page, click right mouse button on image and then select 'Open image in new tab')
 -->
-![nuget.png](https://raw.githubusercontent.com/jfversluis/Plugin.Maui.Feature/main/nuget.png)
-# Plugin.Maui.Feature
+![nuget.png](https://raw.githubusercontent.com/mrlacey/Plugin.Maui.Accessibility/main/nuget.png)
+# Plugin.Maui.Accessibility
 
-`Plugin.Maui.Feature` provides the ability to do this amazing thing in your .NET MAUI application.
+`Plugin.Maui.Accessibility` lets you access system/device accessibility settings in your .NET MAUI application.
 
 ## Install Plugin
 
-[![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.Feature.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.Feature/)
+[![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.Accessibility.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.Accessibility/)
 
-Available on [NuGet](http://www.nuget.org/packages/Plugin.Maui.Feature).
+Available on [NuGet](http://www.nuget.org/packages/Plugin.Maui.Accessibility).
 
-Install with the dotnet CLI: `dotnet add package Plugin.Maui.Feature`, or through the NuGet Package Manager in Visual Studio.
+Install with the dotnet CLI: `dotnet add package Plugin.Maui.Accessibility`, or through the NuGet Package Manager in Visual Studio.
 
 ### Supported Platforms
 
@@ -31,7 +31,7 @@ Install with the dotnet CLI: `dotnet add package Plugin.Maui.Feature`, or throug
 
 ## API Usage
 
-`Plugin.Maui.Feature` provides the `Feature` class that has a single property `Property` that you can get or set.
+`Plugin.Maui.Accessibility` provides the `Feature` class that has a single property `Property` that you can get or set.
 
 You can either use it as a static class, e.g.: `Feature.Default.Property = 1` or with dependency injection: `builder.Services.AddSingleton<IFeature>(Feature.Default);`
 
