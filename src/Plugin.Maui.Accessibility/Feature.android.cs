@@ -1,4 +1,4 @@
-﻿namespace Plugin.Maui.Feature;
+﻿namespace Plugin.Maui.Accessibility;
 
 partial class FeatureImplementation : IFeature
 {

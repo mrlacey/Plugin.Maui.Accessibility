@@ -1,4 +1,4 @@
-﻿namespace Plugin.Maui.Feature;
+﻿namespace Plugin.Maui.Accessibility;
 
 /// <summary>
 /// TODO: Provide relevant comments for your APIs
