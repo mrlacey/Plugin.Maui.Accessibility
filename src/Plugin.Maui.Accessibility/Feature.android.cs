@@ -37,5 +37,6 @@ partial class FeatureImplementation : IFeature
 		}
 	}
 
+	// TODO: Implement your Android specific code
 	public double TextScaleFactor { get; }
 }

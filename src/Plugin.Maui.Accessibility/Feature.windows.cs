@@ -4,7 +4,6 @@ namespace Plugin.Maui.Accessibility;
 
 partial class FeatureImplementation : IFeature
 {
-	// TODO Implement your Windows specific code
 	public PossiblyUnknownBool UseReducedMotion
 	{
 		get
@@ -31,6 +30,7 @@ partial class FeatureImplementation : IFeature
 		}
 	}
 
+	// TODO Implement your Windows specific code
 	public double TextScaleFactor { get; }
 }
 
