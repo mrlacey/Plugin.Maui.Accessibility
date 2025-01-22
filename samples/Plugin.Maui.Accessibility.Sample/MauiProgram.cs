@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Plugin.Maui.Feature;
-
-namespace Plugin.Maui.Feature.Sample;
+﻿namespace Plugin.Maui.Accessibility.Sample;
 
 public static class MauiProgram
 {

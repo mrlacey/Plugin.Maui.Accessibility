@@ -1,6 +1,4 @@
-﻿using Plugin.Maui.Feature;
-
-namespace Plugin.Maui.Feature.Sample;
+﻿namespace Plugin.Maui.Accessibility.Sample;
 
 public partial class MainPage : ContentPage
 {
@@ -9,7 +7,7 @@ public partial class MainPage : ContentPage
 	public MainPage(IFeature feature)
 	{
 		InitializeComponent();
-		
+
 		this.feature = feature;
 	}
 }

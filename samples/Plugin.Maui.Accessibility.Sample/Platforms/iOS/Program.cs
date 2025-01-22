@@ -1,7 +1,6 @@
-﻿using ObjCRuntime;
-using UIKit;
+﻿using UIKit;
 
-namespace Plugin.Maui.Feature.Sample;
+namespace Plugin.Maui.Accessibility.Sample;
 
 public class Program
 {
