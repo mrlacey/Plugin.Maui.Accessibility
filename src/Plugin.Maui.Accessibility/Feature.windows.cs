@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace Plugin.Maui.Accessibility;
+﻿namespace Plugin.Maui.Accessibility;
 
 partial class FeatureImplementation : IFeature
 {
@@ -10,18 +8,12 @@ partial class FeatureImplementation : IFeature
 		{
 			try
 			{
-				int isAnimationEnabled = 0;
-				NativeMethods.SystemParametersInfo(NativeMethods.SPI_GETCLIENTAREAANIMATION, 0, ref isAnimationEnabled, 0);
+				var uiSettings = new Windows.UI.ViewManagement.UISettings();
 
 				// Not that UseReducedMotion is the opposite of using animation (or having it enabled)
-				if (isAnimationEnabled == 0)
-				{
-					return PossiblyUnknownBool.True;
-				}
-				else
-				{
-					return PossiblyUnknownBool.False;
-				}
+				return uiSettings.AnimationsEnabled
+					? PossiblyUnknownBool.False
+					: PossiblyUnknownBool.True;
 			}
 			catch (Exception)
 			{
@@ -34,17 +26,17 @@ partial class FeatureImplementation : IFeature
 	{
 		get
 		{
-			var uiSettings = new Windows.UI.ViewManagement.UISettings();
+			try
+			{
+				var uiSettings = new Windows.UI.ViewManagement.UISettings();
 
-			return uiSettings.TextScaleFactor;
+				return uiSettings.TextScaleFactor;
+			}
+			catch (Exception exc)
+			{
+				System.Diagnostics.Debug.WriteLine(exc);
+				return 1.0f;
+			}
 		}
 	}
-}
-
-public static class NativeMethods
-{
-	public const int SPI_GETCLIENTAREAANIMATION = 0x1042;
-
-	[DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
-	internal static extern bool SystemParametersInfo(int uiAction, int uiParam, ref int pvParam, int fWinIni);
 }
