@@ -37,6 +37,26 @@ partial class FeatureImplementation : IFeature
 		}
 	}
 
-	// TODO: Implement your Android specific code
-	public double TextScaleFactor { get; }
+	const float DefaultFontScale = 1.0f;
+
+	public double TextScaleFactor
+	{
+		get
+		{
+			var resolver = global::Android.App.Application.Context?.ContentResolver;
+			if (resolver == null)
+			{
+				return DefaultFontScale;
+			}
+
+			var fontScale = Settings.System.GetFloat(resolver, Settings.System.FontScale, DefaultFontScale);
+
+			if (fontScale <= 0)
+			{
+				fontScale = DefaultFontScale;
+			}
+
+			return fontScale;
+		}
+	}
 }
