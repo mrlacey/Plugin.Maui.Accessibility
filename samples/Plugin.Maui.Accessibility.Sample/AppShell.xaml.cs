@@ -1,4 +1,4 @@
-﻿namespace Plugin.Maui.Feature.Sample;
+﻿namespace Plugin.Maui.Accessibility.Sample;
 
 public partial class AppShell : Shell
 {
