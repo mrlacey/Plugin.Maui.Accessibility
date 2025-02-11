@@ -30,8 +30,15 @@ partial class FeatureImplementation : IFeature
 		}
 	}
 
-	// TODO Implement your Windows specific code
-	public double TextScaleFactor { get; }
+	public double TextScaleFactor
+	{
+		get
+		{
+			var uiSettings = new Windows.UI.ViewManagement.UISettings();
+
+			return uiSettings.TextScaleFactor;
+		}
+	}
 }
 
 public static class NativeMethods
