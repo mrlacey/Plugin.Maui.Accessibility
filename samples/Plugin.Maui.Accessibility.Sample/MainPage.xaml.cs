@@ -2,9 +2,9 @@
 
 public partial class MainPage : ContentPage
 {
-	readonly IFeature feature;
+	readonly IAccessibilityInfo feature;
 
-	public MainPage(IFeature feature)
+	public MainPage(IAccessibilityInfo feature)
 	{
 		this.feature = feature;
 

@@ -14,7 +14,7 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddTransient<MainPage>();
-		builder.Services.AddSingleton<IFeature>(Feature.Default);
+		builder.Services.AddSingleton<IAccessibilityInfo>(AccessibilityInfo.Default);
 
 		return builder.Build();
 	}

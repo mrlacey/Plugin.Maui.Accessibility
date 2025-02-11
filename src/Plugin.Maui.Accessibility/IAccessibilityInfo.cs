@@ -1,6 +1,6 @@
 ﻿namespace Plugin.Maui.Accessibility;
 
-public interface IFeature
+public interface IAccessibilityInfo
 {
 	/// <summary>
 	/// Is the device configured for reduced motion and/or not showing animations.

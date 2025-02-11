@@ -1,6 +1,6 @@
 ﻿namespace Plugin.Maui.Accessibility;
 
-partial class FeatureImplementation : IFeature
+partial class AccessibilityInfoImplementation : IAccessibilityInfo
 {
 	public PossiblyUnknownBool UseReducedMotion
 	{
