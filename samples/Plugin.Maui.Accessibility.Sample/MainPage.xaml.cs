@@ -6,8 +6,10 @@ public partial class MainPage : ContentPage
 
 	public MainPage(IFeature feature)
 	{
-		InitializeComponent();
-
 		this.feature = feature;
+
+		this.BindingContext = this.feature;
+
+		InitializeComponent();
 	}
 }

@@ -6,4 +6,9 @@
 	Title="Accessibility Plugin">
 
 	<!--  Add something that makes sense for your plugin here  -->
+	<StackLayout>
+		<Label Text="{Binding UseReducedMotion}" />
+		<Label Text="{Binding TextScaleFactor}" />
+
+	</StackLayout>
 </ContentPage>
