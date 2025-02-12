@@ -33,9 +33,9 @@ Install with the dotnet CLI: `dotnet add package Plugin.Maui.Accessibility`, or 
 
 ## API Usage
 
-`Plugin.Maui.Accessibility` provides the `Feature` class that has a single property `Property` that you can get or set.
+`Plugin.Maui.Accessibility` provides the `AccessibilityInfo` class that has a single property `Property` that you can get or set.
 
-You can either use it as a static class, e.g.: `Feature.Default.Property = 1` or with dependency injection: `builder.Services.AddSingleton<IFeature>(Feature.Default);`
+You can either use it as a static class, e.g.: `AccessibilityInfo.Default.UseReducedMotion` or with dependency injection: `builder.Services.AddSingleton<IAccessibilityInfo>(AccessibilityInfo.Default);`
 
 ### Permissions
 
@@ -47,36 +47,38 @@ No permissions are needed for iOS.
 
 #### Android
 
-No permissions are needed for Android.
+No permissions are needed for this plugin.
 
 ### Dependency Injection
 
-You will first need to register the `Feature` with the `MauiAppBuilder` following the same pattern that the .NET MAUI Essentials libraries follow.
+You will first need to register the `AccessibilityInfo` class with the `MauiAppBuilder` following the same pattern that the .NET MAUI Essentials libraries follow.
 
 ```csharp
-builder.Services.AddSingleton(Feature.Default);
+builder.Services.AddSingleton(AccessibilityInfo.Default);
 ```
 
-You can then enable your classes to depend on `IFeature` as per the following example.
+You can then enable your classes to depend on `IAccessibilityInfo` as per the following example.
 
 ```csharp
 public class FeatureViewModel
 {
-    readonly IFeature feature;
+    readonly IAccessibilityInfo accessibility;
 
-    public FeatureViewModel(IFeature feature)
+    public FeatureViewModel(IAccessibilityInfo a11yInfo)
     {
-        this.feature = feature;
+        this.accessibility = a11yInfo;
     }
 
-    public void StartFeature()
+    public void ShowCompletedMessage()
     {
-        feature.ReadingChanged += (sender, reading) =>
+        if (accessibility.UseReducedMotion)
         {
-            Console.WriteLine(reading.Thing);
-        };
-
-        feature.Start();
+            CompletionAnimation.GoToState(State.Finished);
+        }
+        else
+        {
+            CompletionAnimation.Start();
+        }
     }
 }
 ```
@@ -88,48 +90,44 @@ Alternatively if you want to skip using the dependency injection approach you ca
 ```csharp
 public class FeatureViewModel
 {
-    public void StartFeature()
+    public void ShowCompletedMessage()
     {
-        feature.ReadingChanged += (sender, reading) =>
+        if (AccessibilityInfo.Default.UseReducedMotion)
         {
-            Console.WriteLine(feature.Thing);
-        };
-
-        Feature.Default.Start();
+            CompletionAnimation.GoToState(State.Finished);
+        }
+        else
+        {
+            CompletionAnimation.Start();
+        }
     }
 }
 ```
 
-### Feature
+### IAccessibilityInfo
 
-Once you have created a `Feature` you can interact with it in the following ways:
+Once you have created a `AccessibilityInfo` you can interact with it in the following ways:
 
 #### Events
 
-##### `ReadingChanged`
-
-Occurs when feature reading changes.
+None.
 
 #### Properties
 
-##### `IsSupported`
+##### `UseReducedMotion`
 
-Gets a value indicating whether reading the feature is supported on this device.
+Gets a value indicating whether the device is configured to use reduced motion or animations have been disabled.
 
-##### `IsMonitoring`
+##### `TextScaleFactor`
 
-Gets a value indicating whether the feature is actively being monitored.
+Gets a double value indicating by what about text should be scaled to match device settings. (Default = 1.0)
 
 #### Methods
 
-##### `Start()`
-
-Start monitoring for changes to the feature.
-
-##### `Stop()`
-
-Stop monitoring for changes to the feature.
+None.
 
 # Acknowledgements
 
 This project could not have came to be without these projects and people, thank you! <3
+
+- [Gerald and Plugin.Maui.Feature](https://github.com/jfversluis/Plugin.Maui.Feature)
