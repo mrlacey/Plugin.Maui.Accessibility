@@ -16,7 +16,7 @@ partial class AccessibilityInfoImplementation : IAccessibilityInfo
 					return PossiblyUnknownBool.Unknown;
 				}
 
-				// Values may not be set so default to "on" if not set
+				// Values may not be set so default to "on / 1.0" if not set
 				var duration = Settings.Global.GetFloat(resolver, Settings.Global.AnimatorDurationScale, 1.0f);
 				var transition = Settings.Global.GetFloat(resolver, Settings.Global.TransitionAnimationScale, 1.0f);
 
@@ -37,7 +37,7 @@ partial class AccessibilityInfoImplementation : IAccessibilityInfo
 		}
 	}
 
-	const float DefaultFontScale = 1.0f;
+	const float DefaultFontScale = (float)AccessibilityInfo.DefaultTextScaleFactor;
 
 	public double TextScaleFactor
 	{

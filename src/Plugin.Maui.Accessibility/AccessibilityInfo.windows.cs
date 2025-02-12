@@ -35,7 +35,7 @@ partial class AccessibilityInfoImplementation : IAccessibilityInfo
 			catch (Exception exc)
 			{
 				System.Diagnostics.Debug.WriteLine(exc);
-				return 1.0f;
+				return AccessibilityInfo.DefaultTextScaleFactor;
 			}
 		}
 	}

@@ -4,5 +4,5 @@ partial class AccessibilityInfoImplementation : IAccessibilityInfo
 {
 	public PossiblyUnknownBool UseReducedMotion => PossiblyUnknownBool.Unknown;
 
-	public double TextScaleFactor => 1.0;
+	public double TextScaleFactor => AccessibilityInfo.DefaultTextScaleFactor;
 }

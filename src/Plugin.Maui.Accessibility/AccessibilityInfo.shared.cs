@@ -4,6 +4,8 @@ public static class AccessibilityInfo
 {
 	static IAccessibilityInfo? defaultImplementation;
 
+	public const double DefaultTextScaleFactor = 1.0;
+
 	/// <summary>
 	/// Provides the default implementation for static usage of this API.
 	/// </summary>
