@@ -25,7 +25,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Install .NET MAUI Workload
-      run: dotnet workload restore samples\Plugin.Maui.Accessibility.Sample.sln
+      run: dotnet workload restore samples\Plugin.Maui.Accessibility.Sample.slnx
 
     - name: Build
-      run: dotnet build samples\Plugin.Maui.Accessibility.Sample.sln -c Release
+      run: dotnet build samples\Plugin.Maui.Accessibility.Sample.slnx -c Release
