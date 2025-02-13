@@ -9,7 +9,7 @@ on:
     branches: [ "main" ]
 
 env:
-  DOTNET_VERSION: '9.0.x' # The .NET SDK version to use
+  DOTNET_VERSION: '9.0.100' # The .NET SDK version to use
 
 jobs:
   build-plugin-ci:
@@ -25,7 +25,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
     - name: Install .NET MAUI Workload
-      run: dotnet workload restore samples\Plugin.Maui.Accessibility.Sample.slnx
+      run: dotnet workload restore samples\Plugin.Maui.Accessibility.Sample.sln
 
     - name: Build
-      run: dotnet build src\Plugin.Maui.Accessibility.slnx -c Release
+      run: dotnet build src\Plugin.Maui.Accessibility.sln -c Release
