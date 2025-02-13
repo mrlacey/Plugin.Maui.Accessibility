@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../src/Plugin.Maui.Accessibility/Plugin.Maui.Accessibility.csproj" />
+  <Project Path="Plugin.Maui.Accessibility.Sample/Plugin.Maui.Accessibility.Sample.csproj">
+    <Deploy />
+  </Project>
+</Solution>
