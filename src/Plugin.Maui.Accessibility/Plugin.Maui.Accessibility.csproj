@@ -77,7 +77,8 @@
 	<!-- Package additions -->
 	<ItemGroup>
 		<None Include="..\..\nuget.png" PackagePath="icon.png" Pack="true" />
-		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\signnupkg.targets" Link="signnupkg.targets" />
 	</ItemGroup>
 
 	<Import Project="..\signnupkg.targets" />
