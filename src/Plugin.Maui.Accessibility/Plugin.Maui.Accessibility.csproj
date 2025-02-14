@@ -80,4 +80,5 @@
 		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
+	<Import Project="..\signnupkg.targets" />
 </Project>
