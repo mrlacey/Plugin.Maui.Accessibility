@@ -16,8 +16,9 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 
 		<!-- NuGet -->
+		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
 		<Authors>MRLacey</Authors>
-		<Copyright>Copyright © author and contributors</Copyright>
+		<Copyright>Copyright © 2025 Matt Lacey</Copyright>
 		<IsPackable>True</IsPackable>
 		<PackageProjectUrl>https://github.com/mrlacey/Plugin.Maui.Accessibility</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/mrlacey/Plugin.Maui.Accessibility</RepositoryUrl>
