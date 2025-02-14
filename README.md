@@ -28,14 +28,6 @@ You can either use it as a static class, e.g.: `AccessibilityInfo.Default.UseRed
 
 ### Permissions
 
-Before you can start using Feature, you will need to request the proper permissions on each platform.
-
-#### iOS
-
-No permissions are needed for iOS.
-
-#### Android
-
 No permissions are needed for this plugin.
 
 ### Dependency Injection
