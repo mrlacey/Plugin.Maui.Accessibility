@@ -15,8 +15,8 @@ Install with the dotnet CLI: `dotnet add package Plugin.Maui.Accessibility`, or 
 
 | Platform | Minimum Version Supported |
 |----------|---------------------------|
-| iOS      | 11+                       |
-| macOS    | 10.15+                    |
+| iOS      | 14+                       |
+| macOS    | 14.0+                     |
 | Android  | 5.0 (API 21)              |
 | Windows  | 11 and 10 version 1809+   |
 
